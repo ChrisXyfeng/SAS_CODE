@@ -1,3 +1,4 @@
+/*计算一个表格中行数*/
 PROC SQL;
 	SELECT COUNT(*) AS N 
 	FROM (SELECT DISTINCT
