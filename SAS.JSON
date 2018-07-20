@@ -1,0 +1,53 @@
+{
+	"SQL": {
+        "prefix": "SQL",
+        "body": [
+		  "PROC SQL;",
+          "CREATE TABLE ${1:element} AS",
+          "SELECT ",
+          "FROM ",
+          "QUIT;"
+        ],
+        "description": "PROC SQL"
+    },
+	"DATA": {
+        "prefix": "DATA",
+        "body": [
+		  "DATA ${1:};",
+          "SET ${2:};",
+          "${3:}",
+          "RUN;"
+        ],
+        "description": "PROC DATA"
+    },
+	"IF": {
+        "prefix": "IF",
+        "body": [
+		  "IF ${1:} THEN ${2:};",
+        ],
+        "description": "IF"
+    },
+	"FREQ": {
+        "prefix": "FREQ",
+        "body": [
+          "PROC FREQ DATA = ${1:};",
+          "\t$TABLES ${2:}*${3:} / CHISQ;",
+          "\t$TITLE \"${4:}\";",
+          "RUN;"
+        ],
+        "description": "FREQ"
+    },
+    "UNIVARIATE": {
+        "prefix": "UNIVARIATE",
+        "body": [
+          "ODS GRAPHICS ON;",
+          "PROC UNIVARIATE DATA = ${1:};",
+          "\t$VAR ${2:};",
+          "\t$HISTOGRAM ${2:}/NORMAL;",
+          "\t$QQPLOT ${2:};",
+          "\t$TITLE \"${3:}\";",
+          "RUN;"
+        ],
+        "description": "UNIVARIATE"
+    },
+}
