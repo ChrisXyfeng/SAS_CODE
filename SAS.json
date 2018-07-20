@@ -50,4 +50,15 @@
         ],
         "description": "UNIVARIATE"
     },
+    "BARCHART": {
+        "prefix": "BARCHART",
+        "body": [
+          "PROC SGPLOT DATA = ${1:};",
+          "\t$VAR ${2:} / GROUP = ${3:} or RESPONSE = ${3:};",
+          "\t$LABEL ${2:} =\"${4:}\";",
+          "\t$TITLE \"${5:}\";",
+          "RUN;"
+        ],
+        "description": "BARCHART"
+    },
 }
